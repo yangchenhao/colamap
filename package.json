@@ -1,0 +1,37 @@
+{
+  "name": "mapcola",
+  "version": "1.0.0",
+  "description": "A library rendering maps on HTML5 Canvas",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.8",
+    "browserify": "^13.0.1",
+    "chai": "^3.5.0",
+    "leaflet": "^0.7.7",
+    "leaflet-map": "^0.2.1",
+    "mocha": "^2.5.3"
+  },
+  "scripts": {
+    "test": "make test",
+    "example": "beefy test/test.js -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lixun910/mapcola.git"
+  },
+  "keywords": [
+    "map"
+  ],
+  "author": "Xun Li <lixun910@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/lixun910/mapcola/issues"
+  },
+  "homepage": "https://github.com/lixun910/mapcola#readme"
+}
