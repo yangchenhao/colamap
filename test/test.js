@@ -10,7 +10,7 @@ var cmap = new MapCola("mymap", {
   });
 
 cmap.AddLayer("test/data/nat.shp", {'fill_color':'red'});
-
+//cmap.AddLayer("test/data/nat.json", {'fill_color':'green'});
 
 
 
