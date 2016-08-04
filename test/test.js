@@ -7,10 +7,20 @@ var cmap = new MapCola("mymap", {
   //tileLayer : "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
   width : "800px",
   height : "600px",
-  scale : true
+  showScale : true,
+  showTable : true
   });
 
-cmap.AddLayer("test/data/nat.shp", {'fill_color':'red'});
+cmap.AddLayer("test/data/nat.shp", {'fill_color':'red'}
+  , function(map, data) {
+  // do spatial analysis here
+  // clr_schema = geoda.quantile(data.income, k=5, colors=colorbrew.gry);
+
+  // create a result map
+  // map_canvas.update({colorSchema: clr_schema})
+
+  // * share the map  on canvas not via code
+});
 //cmap.AddLayer("test/data/nat.json", {'fill_color':'green'});
 
 
