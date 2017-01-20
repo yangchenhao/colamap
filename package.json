@@ -11,7 +11,7 @@
     "bootstrap-table": "^1.11.0",
     "chai": "^3.5.0",
     "jquery": "^3.1.1",
-    "leaflet": "^0.7.7",
+    "leaflet": "^0.7.7"
   },
   "devDependencies": {
     "beefy": "^2.1.8",
