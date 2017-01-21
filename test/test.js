@@ -1,17 +1,23 @@
-// Author: lixun910 at gmail.com
-
 // 1. simplest MapCola Example
-//var react = require('react');
-//var rbt = require('react-bootstrap-table');
-var $ = global.jQuery = require('jquery');
 
+// Add CSS links
+function help_AddCssLink(css_url)
+{
+  var mapStyle = document.createElement('link')
+  mapStyle.setAttribute('rel','stylesheet')
+  mapStyle.setAttribute('href', css_url)
+  document.body.appendChild(mapStyle);
+}
+help_AddCssLink('//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+help_AddCssLink("//issues.wenzhixin.net.cn/bootstrap-table/assets/bootstrap-table/src/bootstrap-table.css");
+
+// Add js links
+global.$ = global.jQuery = require('jquery/dist/jquery.min.js');
 require('bootstrap/dist/js/bootstrap.min.js');
-//require('bootstrap-table');
 var bootstrapTable = require('bootstrap-table/dist/bootstrap-table.js')
-
-
 var MapCola = require('../lib/index.js');
 
+// main code body
 var cmap = new MapCola("mymap", {
   //tileLayer : "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
   width : "800px",
@@ -22,50 +28,18 @@ var cmap = new MapCola("mymap", {
 
 cmap.AddLayer("test/data/nat.json", {'fill_color':'red'}
   , function(map, data) {
-    console.log(map, data);
+    //console.log(map, data);
 
-    // using data (json) create a table (boostrap)
-    //create_table(data, "div", "classname");
-      var mymap = document.getElementById("mymap");
-      var table = document.createElement('table'); 
-      table.setAttribute("id", "table");  
-      mymap.appendChild(table); 
-      
+    // do spatial analysis here
+    // clr_schema = geoda.quantile(data.income, k=5, colors=colorbrew.gry);
 
-      $('#table').bootstrapTable({
-        columns: [{
-            field: 'id',
-            title: 'Item ID'
-        }, {
-            field: 'name',
-            title: 'Item Name'
-        }, {
-            field: 'price',
-            title: 'Item Price'
-        }],
-        data: [{
-            id: 1,
-            name: 'Item 1',
-            price: '$1'
-        }, {
-            id: 2,
-            name: 'Item 2',
-            price: '$2'
-        }]
-    });
+    // create a result map
+    // map_canvas.update({colorSchema: clr_schema})
 
-  // do spatial analysis here
-  // clr_schema = geoda.quantile(data.income, k=5, colors=colorbrew.gry);
+    // * share the map  on canvas not via code
+  });
 
-  // create a result map
-  // map_canvas.update({colorSchema: clr_schema})
-
-  // * share the map  on canvas not via code
-});
-//cmap.AddLayer("test/data/nat.json", {'fill_color':'green'});
-
-
-
+/*
 // 2. MapCola works with existing LeafletMap project
 var L = require('leaflet'),
     LeafletMap = require('leaflet-map');
@@ -78,3 +52,4 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png')
 
 var cmap2 = new MapCola(lmap);
 cmap2.AddLayer("test/data/nat.shp", {'fill_color':'blue'});
+*/
